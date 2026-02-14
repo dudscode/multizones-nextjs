@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-const { PERFIL_URL, DASH_SSR_URL } = process.env;
+const { PERFIL_URL, DASH_SSR_URL, ANGULAR_URL} = process.env;
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
       {
         source: "/dash-ssr/:path*",
         destination: `${DASH_SSR_URL}/dash-ssr/:path*`,
+      },
+      {
+        source: "/login-angular",
+        destination: `${ANGULAR_URL}/login-angular`,
+      },
+      {
+        source: "/login-angular/:path*",
+        destination: `${ANGULAR_URL}/login-angular/:path*`,
       }
     ];
   },
