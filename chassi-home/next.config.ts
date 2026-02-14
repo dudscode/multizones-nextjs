@@ -15,6 +15,14 @@ const nextConfig: NextConfig = {
         source: "/perfil/:path*",
         destination: `${PERFIL_URL}/perfil/:path*`,
       },
+      {
+        source: "/dash-ssr",
+        destination: "http://localhost:9999/dash-ssr",
+      },
+      {
+        source: "/dash-ssr/:path*",
+        destination: "http://localhost:9999/dash-ssr/:path*",
+      }
     ];
   },
   /* config options here */
